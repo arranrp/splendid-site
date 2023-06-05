@@ -24,6 +24,7 @@ const speakers = defineCollection({
   schema: z.object({
     name: z.string(),
     avatar: z.string(),
+    pronouns: z.string(),
     largeImage: z.string().optional(),
     socialLinks: z.object({
       github: z.string().optional(),
