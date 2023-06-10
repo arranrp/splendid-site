@@ -25,7 +25,8 @@ const speakers = defineCollection({
     name: z.string(),
     avatar: z.string(),
     pronouns: z.string(),
-    largeImage: z.string().optional(),
+    socialDescription: z.string(),
+    socialImage: z.string().optional(),
     socialLinks: z.object({
       github: z.string().optional(),
       twitter: z.string().optional(),

@@ -1,6 +1,8 @@
 ---
 name: Maciej Pędzich
 avatar: https://github.com/maciejpedzich.png
+socialDescription: Lorem ipsum dolor sit amet
+socialImage: https://maciejpedzi.ch/banner.png
 pronouns: he/him
 socialLinks:
   github: maciejpedzich
@@ -9,4 +11,4 @@ socialLinks:
   personalWebsite: https://maciejpedzi.ch
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+**Lorem ipsum** dolor sit amet, *consectetur adipiscing elit*, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
