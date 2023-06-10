@@ -1,0 +1,37 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+
+export async function getStaticPaths() {
+	const speakers = await getCollection('events');
+
+	return speakers.map((event) => ({
+		params: { slug: event.slug },
+		props: event
+	}));
+}
+
+type Props = CollectionEntry<'events'>;
+
+const event = Astro.props;
+const { Content } = await event.render();
+---
+
+<BaseLayout
+	title={event.data.title}
+	description={event.data.socialDescription}
+	image={event.data.socialImage}
+>
+	<h1>{event.data.title}</h1>
+	<FormattedDate date={event.data.startDate} />
+	{event.data.endDate && <FormattedDate date={event.data.endDate} />}
+	{
+		event.data.signupLink && (
+			<a href={event.data.signupLink} target="_blank" rel="noopener noreferrer">
+				Sign Up
+			</a>
+		)
+	}
+	<Content />
+</BaseLayout>

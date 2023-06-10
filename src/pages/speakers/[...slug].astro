@@ -1,0 +1,77 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+	const speakers = await getCollection('speakers');
+
+	return speakers.map((speaker) => ({
+		params: { slug: speaker.slug },
+		props: speaker
+	}));
+}
+
+type Props = CollectionEntry<'speakers'>;
+
+const speaker = Astro.props;
+const { Content } = await speaker.render();
+---
+
+<BaseLayout
+	title={speaker.data.name}
+	description={speaker.data.socialDescription}
+	image={speaker.data.socialImage}
+>
+	<h1>{speaker.data.name}</h1>
+	{
+		speaker.data.avatar && (
+			<img src={speaker.data.avatar} alt={speaker.data.name + "'s avatar"} />
+		)
+	}
+	<br />
+	{
+		speaker.data.socialLinks.github && (
+			<a
+				href={'https://github.com/' + speaker.data.socialLinks.github}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				GitHub
+			</a>
+		)
+	}
+	{
+		speaker.data.socialLinks.twitter && (
+			<a
+				href={'https://twitter.com/' + speaker.data.socialLinks.twitter}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Twitter
+			</a>
+		)
+	}
+	{
+		speaker.data.socialLinks.mastodon && (
+			<a
+				href={speaker.data.socialLinks.mastodon}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Mastodon
+			</a>
+		)
+	}
+	{
+		speaker.data.socialLinks.personalWebsite && (
+			<a
+				href={speaker.data.socialLinks.personalWebsite}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Personal Website
+			</a>
+		)
+	}
+	<Content />
+</BaseLayout>
