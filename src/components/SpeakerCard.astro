@@ -1,0 +1,71 @@
+---
+import { CollectionEntry } from 'astro:content';
+
+type Props = CollectionEntry<'speakers'>;
+
+const speaker = Astro.props;
+---
+
+<h2>{speaker.data.name}</h2>
+<img src={speaker.data.avatar} alt={speaker.data.name + "'s avatar"} />
+<p>{speaker.data.socialDescription}</p>
+{
+  speaker.data.socialLinks.mastodon
+  ?
+    (<a
+      href={speaker.data.socialLinks.mastodon}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Mastodon
+    </a>)
+  : speaker.data.socialLinks.instagram
+  ? (<a
+      href={'https://instagram.com/' + speaker.data.socialLinks.instagram}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Instagram
+    </a>)
+  : speaker.data.socialLinks.github
+  ? (
+			<a
+				href={'https://github.com/' + speaker.data.socialLinks.github}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				GitHub
+			</a>
+		)
+  : speaker.data.socialLinks.twitter
+  ? (
+			<a
+				href={'https://twitter.com/' + speaker.data.socialLinks.twitter}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Twitter
+			</a>
+		)
+  : speaker.data.socialLinks.personalWebsite
+  ? (
+			<a
+				href={speaker.data.socialLinks.personalWebsite}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Personal Website
+			</a>
+		)
+  : speaker.data.socialLinks.companyWebsite
+  ? (
+			<a
+				href={speaker.data.socialLinks.companyWebsite}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Company Website
+			</a>
+		)
+  : <div></div>
+}

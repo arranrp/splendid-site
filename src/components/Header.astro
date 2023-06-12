@@ -1,0 +1,20 @@
+---
+import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
+---
+
+<header>
+  <h2>
+    {SITE_TITLE}
+  </h2>
+  <nav>
+    <HeaderLink href="/">Home</HeaderLink>
+    <HeaderLink href="/resources">Resources</HeaderLink>
+    <HeaderLink href="/events">Upcoming events</HeaderLink>
+    <HeaderLink href="/events/archive">Event archive</HeaderLink>
+    <HeaderLink href="/speakers">Speakers</HeaderLink>
+    <HeaderLink href="https://discord.gg/X5aXGyU3Q3" target="_blank">
+      Discord
+    </HeaderLink>
+  </nav>
+</header>
