@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const resources = await getCollection('resources');
+---
+
+<BaseLayout
+	title="Resources"
+	description="List of all Splendid Development resources"
+>
+	<h1>Resources</h1>
+	<ul>
+		{
+			resources.map((resource) => (
+				<li>
+					<a href={'/resources/' + resource.slug}>{resource.data.title}</a>
+				</li>
+			))
+		}
+	</ul>
+</BaseLayout>

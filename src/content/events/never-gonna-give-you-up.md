@@ -2,6 +2,8 @@
 title: Never Gonna Give You Up
 socialDescription: Sike, you've just been rickrolled
 socialImage: https://variety.com/wp-content/uploads/2021/07/Rick-Astley-Never-Gonna-Give-You-Up.png?w=1024
+speakers:
+  - maciej-pedzich
 startDate: 2023-06-12T16:54:47+0000
 tags:
   - never

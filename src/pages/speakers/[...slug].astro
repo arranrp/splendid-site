@@ -23,11 +23,8 @@ const { Content } = await speaker.render();
 	image={speaker.data.socialImage}
 >
 	<h1>{speaker.data.name}</h1>
-	{
-		speaker.data.avatar && (
-			<img src={speaker.data.avatar} alt={speaker.data.name + "'s avatar"} />
-		)
-	}
+	<img src={speaker.data.avatar} alt={speaker.data.name + "'s avatar"} />
+	{speaker.data.socialImage && <img src={speaker.data.socialImage} alt={speaker.data.name + "'s social image"} /> }
 	<br />
 	{
 		speaker.data.socialLinks.github && (

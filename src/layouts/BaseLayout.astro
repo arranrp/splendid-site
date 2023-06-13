@@ -1,10 +1,12 @@
 ---
-import HeaderLink from '../components/HeaderLink.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
+// import '../styles/baselayout.css';
 
 export interface Props {
 	title?: string;
@@ -44,26 +46,11 @@ const {
 		<meta property="twitter:image" content={new URL(image, Astro.url)} />
 	</head>
 	<body>
-		<header>
-			<h2>
-				{SITE_TITLE}
-			</h2>
-			<nav>
-				<HeaderLink href="/">Home</HeaderLink>
-				<HeaderLink href="/events">Upcoming events</HeaderLink>
-				<HeaderLink href="/events/archive">Event archive</HeaderLink>
-				<HeaderLink href="/speakers">Speakers</HeaderLink>
-				<HeaderLink href="https://discord.gg/2PpJ99WQ4a" target="_blank">
-					Discord
-				</HeaderLink>
-			</nav>
-		</header>
+		<Header />
 		<main>
 			<slot />
 		</main>
-		<footer>
-			&copy; {new Date().getFullYear()} Splendid Development. All rights reserved.
-		</footer>
+		<Footer />
 	</body>
 </html>
 
