@@ -48,21 +48,14 @@ const {
 	<body>
 		<Header />
 		<main>
-			<slot />
+			<div class="main-inner">
+				<slot />
+			</div>
 		</main>
 		<Footer />
 	</body>
 </html>
 
 <style>
-	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
-	}
-	footer {
-		padding: 25px;
-		text-align: center;
-	}
+	
 </style>

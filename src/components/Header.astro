@@ -4,17 +4,47 @@ import HeaderLink from "./HeaderLink.astro";
 ---
 
 <header>
-  <h2>
-    {SITE_TITLE}
-  </h2>
+  
   <nav>
     <HeaderLink href="/">Home</HeaderLink>
-    <HeaderLink href="/resources">Resources</HeaderLink>
-    <HeaderLink href="/events">Upcoming events</HeaderLink>
-    <HeaderLink href="/events/archive">Event archive</HeaderLink>
-    <HeaderLink href="/speakers">Speakers</HeaderLink>
+    
+    <HeaderLink href="/events">Events Do</HeaderLink>
+    <HeaderLink href="/events/archive">Events Did</HeaderLink>
+  
     <HeaderLink href="https://discord.gg/X5aXGyU3Q3" target="_blank">
       Discord
     </HeaderLink>
+    <HeaderLink href="/resources">About</HeaderLink>
+    <HeaderLink href="/resources">Resources</HeaderLink>
   </nav>
+  <h1>Making events<br> For Making.</h1>
 </header>
+
+<style>
+nav {
+  grid-area: 1 / 2 / 3 / 3;
+	justify-self: end;
+  max-width: 45ch;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: space-between;
+  margin: 0 0 var(--unit) 0;
+  gap: calc(var(--unit) / 1.8) calc(var(--unit) / 2);
+}
+
+nav a {
+  background-color: #F7E8C1;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.25rem 1rem;
+  margin:0;
+
+  font-weight: 700;
+  color: #000;
+	}
+a.active {
+}
+
+</style>
