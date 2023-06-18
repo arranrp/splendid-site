@@ -489,9 +489,10 @@ h1 {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-auto-rows: auto;
-	grid-auto-flow: dense;
+	grid-auto-flow:dense;
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
+	
 	
 }
 
@@ -501,6 +502,20 @@ section {
 	padding:calc(var(--unit) / 2);
 	grid-column-start: 1;
 	grid-column-end: 9;
+
+	display: inline-block;
+}
+
+.cross-block {
+	display: inline-block;
+	background-color: antiquewhite;
+	border-color: #3273dc;
+	border: 10px solid;
+	grid-column-start: 9;
+	grid-column-end: 13;
+	height: 200px;
+	grid-column: span 4;
+	grid-row: span 1;
 }
 
 h2 {
