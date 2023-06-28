@@ -492,7 +492,7 @@ h1 {
 		0 8px 8px hsl(0deg 0% 0% / 0.075),
 		0 16px 16px hsl(0deg 0% 0% / 0.075)
   ;
-	max-width: 1000px;
+	/* max-width: 1000px; */
 	/* width: clamp(200px, 80%, 1600px); */
 }
 
